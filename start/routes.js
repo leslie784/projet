@@ -16,4 +16,10 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+//------Customers---
+Route.get ('/elements/customers','/elements/CustomerController.index')
+Route.get('/elements/customers/count','/elements/CustomerController.counting')
+Route.post ('/elements/customers/add','/elements/CustomerController.add')
+Route.post ('/elements/customers/modify','/elements/CustomerController.modify')
+Route.delete('/elements/customers/:id','/elements/CustomerController.delete')
+Route.get('/elements/customers/:id','/elements/CustomerController.view')
