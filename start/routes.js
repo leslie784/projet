@@ -15,6 +15,7 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
+Route.post('/auth/signin','auth/AuthController.login')
 
 //------Customers---
 Route.get ('/elements/customers','/elements/CustomerController.index')
