@@ -15,12 +15,21 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
-Route.post('/auth/signin','auth/AuthController.login')
+Route.post('/auth/register','/AuthController.register')
+Route.post('/auth/signin','/AuthController.login')
 
 //------Customers---
-Route.get ('/elements/customers','/elements/CustomerController.index')
-Route.get('/elements/customers/count','/elements/CustomerController.counting')
-Route.post ('/elements/customers/add','/elements/CustomerController.add')
-Route.post ('/elements/customers/modify','/elements/CustomerController.modify')
-Route.delete('/elements/customers/:id','/elements/CustomerController.delete')
-Route.get('/elements/customers/:id','/elements/CustomerController.view')
+Route.get ('/elements/customers','/CustomerController.index')
+Route.get('/elements/customers/count','/CustomerController.counting')
+Route.post ('/elements/customers/add','/CustomerController.add')
+Route.post ('/elements/customers/modify','/CustomerController.modify')
+Route.delete('/elements/customers/:id','/CustomerController.delete')
+Route.get('/elements/customers/:id','/CustomerController.view')
+
+//------Workers---
+Route.get ('/elements/workers','/WorkerController.index')
+Route.post ('/elements/workers/add','/WorkerController.add')
+Route.get('/elements/workers/:id','/WorkerController.view')
+
+////------Service---
+Route.post ('/elements/service/add','/ServiceController.add')

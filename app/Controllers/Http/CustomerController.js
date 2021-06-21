@@ -1,5 +1,5 @@
 'use strict'
-const Customer = use('App/Models/elements/Customer')
+const Customer = use('App/Models/Customer')
 const Database = use('Database')
 
 class CustomerController {
@@ -12,9 +12,8 @@ class CustomerController {
 
     async add({request}){
 
-        const input = request.only(['id','name','mark', 'comment'])
+        const input = request.only(['name','mark', 'comment'])
         const customer= new Customer()
-        customer.id_customer= input.id
         customer.name=input.name
         customer.mark=input.mark
         customer.comment=input.comment
